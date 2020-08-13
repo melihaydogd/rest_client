@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/repositoryFragment">
+
+    <fragment
+        android:id="@+id/repositoryFragment"
+        android:name="com.example.restclient.repository.RepositoryFragment"
+        android:label="Trending Repositories">
+        <action
+            android:id="@+id/action_repositoryFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.restclient.detail.DetailFragment"
+        android:label="Info" >
+        <argument
+            android:name="selectedRepository"
+            app:argType="com.example.restclient.network.GithubRepository" />
+    </fragment>
+</navigation>
